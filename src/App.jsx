@@ -9,7 +9,7 @@ const initialStateTodos = [
   { id: 1, title: "Call your wife", completed: true },
   { id: 2, title: "Go to the gym", completed: false },
   { id: 3, title: "10 minutes medication", completed: false },
-  { id: 4, title: "Complete FromtEndMentor challenge", completed: false },
+  { id: 4, title: "Complete FrontEndMentor challenge", completed: false },
 ];
 
 const App = () => {
@@ -41,28 +41,27 @@ const App = () => {
 
   const clearCompleted = () => {
     setTodos(todos.filter((todo) => !todo.completed));
-  }
+  };
 
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState("all");
 
   const changeFilter = (filter) => setFilter(filter);
 
   const filterTodos = () => {
     switch (filter) {
-      case 'all':
+      case "all":
         return todos;
-      case 'active':
+      case "active":
         return todos.filter((todo) => !todo.completed);
-      case 'completed':
+      case "completed":
         return todos.filter((todo) => todo.completed);
       default:
         return todos;
-      
     }
-  }
+  };
 
   return (
-    <div className="min-h-screen bg-gray-300 bg-[url('./assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat ">
+    <div className="min-h-screen bg-gray-300 bg-[url('./assets/images/bg-mobile-light.jpg')] bg-contain   bg-no-repeat dark:bg-gray-900 dark:bg-[url('./assets/images/bg-mobile-dark.jpg')] ">
       <Header />
       <main className="container mx-auto mt-9 px-5">
         <TodoCreate createTodo={createTodo} />
@@ -75,7 +74,9 @@ const App = () => {
         <TodoFilter changeFilter={changeFilter} />
       </main>
 
-      <footer className="mt-5 text-center">Drag & drop to order</footer>
+      <footer className="mt-5 text-center font-light dark:text-gray-400">
+        Drag & drop to order
+      </footer>
     </div>
   );
 };

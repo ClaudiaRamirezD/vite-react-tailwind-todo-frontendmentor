@@ -19,12 +19,15 @@ const TodoCreate = ({ createTodo }) => {
 
   return (
     // {/* TodoCreate */}
-    <form onSubmit={handleSubmitAddTodo} className=" flex items-center gap-4 overflow-hidden rounded-md bg-white p-4">
-      <span className="inline-block h-5 w-5 rounded-full border-2 "></span>
+    <form
+      onSubmit={handleSubmitAddTodo}
+      className=" flex items-center gap-4 overflow-hidden rounded-md bg-white p-4  transition-all duration-700 dark:bg-gray-800"
+    >
+      <span className="inline-block h-5 w-5 rounded-full border-2 dark:border-gray-700"></span>
       <input
         type="text"
         placeholder="Create a new ToDo..."
-        className="w-full text-gray-400 outline-none"
+        className="w-full text-gray-400 outline-none  transition-all duration-700 dark:bg-gray-800"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
